@@ -1,0 +1,15 @@
+{
+  "name": "paralleldots",
+  "version": "2.0.1",
+  "description": "A Node.js wrapper for the ParallelDots' API",
+  "main": "paralleldots.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Farhan Haque",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.83.0"
+  },
+  "devDependencies": {}
+}
