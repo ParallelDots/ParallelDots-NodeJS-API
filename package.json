@@ -7,9 +7,12 @@
     "test": "jest"
   },
   "author": "Farhan Haque",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ParallelDots/ParallelDots-NodeJS-API"
+  },
   "license": "ISC",
   "dependencies": {
     "request": "^2.83.0"
-  },
-  "devDependencies": {}
+  }
 }
