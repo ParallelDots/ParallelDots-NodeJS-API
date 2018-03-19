@@ -1,6 +1,6 @@
 {
   "name": "paralleldots",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "description": "A Node.js wrapper for the ParallelDots' API",
   "main": "paralleldots.js",
   "scripts": {
