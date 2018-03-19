@@ -24,6 +24,7 @@ Supported APIs:
 - [Taxonomy](https://www.paralleldots.com/text-classification)
 - [Named Entity Extraction/Recognition ( NER )](https://tinyurl.com/k9yglwc)
 - [Keywords](https://tinyurl.com/kujcu8o)
+- Multi-language Keywords
 - [Intent](https://tinyurl.com/n568bqw)
 - [Emotion](http://blog.paralleldots.com/technology/deep-learning/emotion-detection-using-machine-learning/)
 - [Abuse](https://www.paralleldots.com/text-analysis-apis#abusive)
@@ -40,8 +41,11 @@ Supported APIs:
 	- Thai ( th )
 	- Danish ( da )
 	- Finish ( fi )
-- [Sentiment Social](https://www.paralleldots.com/text-analysis-apis#sentiment)
 - [Custom Classifier](https://www.paralleldots.com/custom-classifier)
+- NSFW (Visual API)
+- Popularity (Visual API)
+- Phrase Extractor
+- Text Parser
 - Usage
 
 
@@ -64,7 +68,10 @@ pd.usage()
 		console.log(error);
 	})
 
-pd.sentiment('Team performed well overall.')
+
+// language parameter is optional, by default "en" is passed.
+
+pd.sentiment('Team performed well overall.','en')
 	.then((response) => {
 		console.log(response);
 	}).catch((error) =>{
@@ -96,7 +103,16 @@ pd.ner('When Michael Jordan was at the peak of his powers as an NBA superstar, h
 		console.log(error);
 	})
 
-pd.emotion('I am trying to imagine you with a personality.')
+
+pd.emotion("I am trying to imagine you with a personality.","en")
+	.then((response) => {
+		console.log(response);
+	})
+	.catch((error) => {
+		console.log(error);
+	})
+
+pd.emotion("C'est un environnement très hostile, si vous choisissez de débattre ici, vous serez vicieusement attaqué par l'opposition.","fr")
 	.then((response) => {
 		console.log(response);
 	})
@@ -120,7 +136,7 @@ pd.keywords('For the Yankees, it took a stunning comeback after being down 2-0 t
 		console.log(error);
 	})
 
-pd.taxonomy('Deutsche Bank CEO sees far fewer than 4,000 Brexit-related moves: paper')
+pd.multilangKeywords("C'est un environnement très hostile, si vous choisissez de débattre ici, vous serez vicieusement attaqué par l'opposition.","fr")
 	.then((response) => {
 		console.log(response);
 	})
@@ -136,7 +152,15 @@ pd.taxonomy('Deutsche Bank CEO sees far fewer than 4,000 Brexit-related moves: p
 		console.log(error);
 	})
 
-pd.multilingualSentiment('Barcelona es una ciudad hermosa')
+pd.taxonomy('Deutsche Bank CEO sees far fewer than 4,000 Brexit-related moves: paper')
+	.then((response) => {
+		console.log(response);
+	})
+	.catch((error) => {
+		console.log(error);
+	})
+
+pd.multilingualSentiment('Barcelona es una ciudad hermosa','es')
 	.then((response) => {
 		console.log(response);
 	})
@@ -151,6 +175,66 @@ pd.sentimentSocial('I left my camera at home')
 	.catch((error) => {
 		console.log(error);
 	})
+
+const category = {
+	"finance": [ 
+			"markets", 
+			"economy", 
+			"shares" 
+		], 
+	"world politics": [ 
+			"diplomacy", 
+			"UN", 
+			"war" 
+		], 
+	"india": [ 
+			"congress", 
+			"india", 
+			"bjp" 
+		] 
+}
+
+pd.customClassifier('Prime Minister Narendra Modi tweeted a link to the speech Human Resource Development Minister Smriti Irani made in the Lok Sabha during the debate on the ongoing JNU row and the suicide of Dalit scholar Rohith Vemula at the Hyderabad Central University.',category)
+	.then((response) => {
+		console.log(response);
+	})
+	.catch((error) => {
+		console.log(error);
+	})
+
+pd.textParser('For the Yankees, it took a stunning comeback after being down 2-0 to the Indians in the American League Division Series. For the Astros, it took beating Chris Sale to top the Red Sox.')
+	.then((response) => {
+		console.log(response);
+	})
+	.catch((error) => {
+		console.log(error);
+	})
+
+pd.phraseExtractor('For the Yankees, it took a stunning comeback after being down 2-0 to the Indians in the American League Division Series. For the Astros, it took beating Chris Sale to top the Red Sox.')
+	.then((response) => {
+		console.log(response);
+	})
+	.catch((error) => {
+		console.log(error);
+	})
+
+const file_path = path.join(__dirname,'doggie.jpg');
+
+pd.popularity(file_path)
+	.then((response) => {
+		console.log(response);
+	})
+	.catch((error) => {
+		console.log(error);
+	})
+	
+pd.nsfw(file_path)
+	.then((response) => {
+		console.log(response);
+	})
+	.catch((error) => {
+		console.log(error);
+	})
 ```
 
 To import and use a single module
@@ -159,14 +243,14 @@ To import and use a single module
 Example
 
 ```javascript
-const sentiment = require('paralleldots/apis/sentiment');
-sentiment('Team performed well overall.','<YOUR_API_KEY>')
+const intent = require('paralleldots/apis/intent');
+intent('How do I cancel my ticket from the app?','<YOUR_API_KEY>')
 	.then((response) => {
 		console.log(response);
 	}).catch((error) =>{
 		console.log(error);
 	})
 ```
- Available APIs: abuse | customClassifier | emotion | intent | keywords | multilingualSentiment | ner | semantic | sentiment | taxonomy | usage
+ Available APIs: abuse | customClassifier | emotion | intent | keywords | multilangKeywords | ner | nsfw | phraseExtractor | popularity | semantic | sentiment | taxonomy | textParser | usage
 
 Note : You must pass your API key as the last parameter for single usage.

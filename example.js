@@ -1,4 +1,5 @@
 const pd = require('./paralleldots');
+const path = require('path');
 
 // Be sure to set your API key
 pd.apiKey = "YOUR_API_KEY";
@@ -13,7 +14,10 @@ pd.usage()
 		console.log(error);
 	})
 
-pd.sentiment('Team performed well overall.')
+
+// language parameter is optional, by default "en" is passed.
+
+pd.sentiment('Team performed well overall.','en')
 	.then((response) => {
 		console.log(response);
 	}).catch((error) =>{
@@ -45,7 +49,16 @@ pd.ner('When Michael Jordan was at the peak of his powers as an NBA superstar, h
 		console.log(error);
 	})
 
-pd.emotion('I am trying to imagine you with a personality.')
+
+pd.emotion("I am trying to imagine you with a personality.","en")
+	.then((response) => {
+		console.log(response);
+	})
+	.catch((error) => {
+		console.log(error);
+	})
+
+pd.emotion("C'est un environnement très hostile, si vous choisissez de débattre ici, vous serez vicieusement attaqué par l'opposition.","fr")
 	.then((response) => {
 		console.log(response);
 	})
@@ -62,6 +75,14 @@ pd.intent('How do I cancel my ticket from the app?')
 	})
 
 pd.keywords('For the Yankees, it took a stunning comeback after being down 2-0 to the Indians in the American League Division Series. For the Astros, it took beating Chris Sale to top the Red Sox.')
+	.then((response) => {
+		console.log(response);
+	})
+	.catch((error) => {
+		console.log(error);
+	})
+
+pd.multilangKeywords("C'est un environnement très hostile, si vous choisissez de débattre ici, vous serez vicieusement attaqué par l'opposition.","fr")
 	.then((response) => {
 		console.log(response);
 	})
@@ -94,6 +115,66 @@ pd.multilingualSentiment('Barcelona es una ciudad hermosa','es')
 	})
 
 pd.sentimentSocial('I left my camera at home')
+	.then((response) => {
+		console.log(response);
+	})
+	.catch((error) => {
+		console.log(error);
+	})
+
+const category = {
+	"finance": [ 
+			"markets", 
+			"economy", 
+			"shares" 
+		], 
+	"world politics": [ 
+			"diplomacy", 
+			"UN", 
+			"war" 
+		], 
+	"india": [ 
+			"congress", 
+			"india", 
+			"bjp" 
+		] 
+}
+
+pd.customClassifier('Prime Minister Narendra Modi tweeted a link to the speech Human Resource Development Minister Smriti Irani made in the Lok Sabha during the debate on the ongoing JNU row and the suicide of Dalit scholar Rohith Vemula at the Hyderabad Central University.',category)
+	.then((response) => {
+		console.log(response);
+	})
+	.catch((error) => {
+		console.log(error);
+	})
+
+pd.textParser('For the Yankees, it took a stunning comeback after being down 2-0 to the Indians in the American League Division Series. For the Astros, it took beating Chris Sale to top the Red Sox.')
+	.then((response) => {
+		console.log(response);
+	})
+	.catch((error) => {
+		console.log(error);
+	})
+
+pd.phraseExtractor('For the Yankees, it took a stunning comeback after being down 2-0 to the Indians in the American League Division Series. For the Astros, it took beating Chris Sale to top the Red Sox.')
+	.then((response) => {
+		console.log(response);
+	})
+	.catch((error) => {
+		console.log(error);
+	})
+
+const file_path = path.join(__dirname,'image-file.jpg');
+
+pd.popularity(file_path)
+	.then((response) => {
+		console.log(response);
+	})
+	.catch((error) => {
+		console.log(error);
+	})
+
+pd.nsfw(file_path)
 	.then((response) => {
 		console.log(response);
 	})

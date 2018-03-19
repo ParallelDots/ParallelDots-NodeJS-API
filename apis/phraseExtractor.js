@@ -1,6 +1,6 @@
 const request = require('request');
 
-let sentimentSocial = function(text,API_KEY){
+let phraseExtractor = function(text,API_KEY){
 	return new Promise((resolve,reject) => {
 		if(!API_KEY){
 			reject({error: 'API key is not set'});
@@ -8,7 +8,7 @@ let sentimentSocial = function(text,API_KEY){
 		if(!text || typeof(text) != "string"){
 			reject({error: 'Please provide a non-empty string'});
 		}
-		request.post({url:'http://apis.paralleldots.com/v2/sentiment_social', form: {text:text,api_key:API_KEY}}, function(err,httpResponse,body){ 
+		request.post({url:'http://apis.paralleldots.com/v3/phrase_extractor', form: {text:text,api_key:API_KEY}}, function(err,httpResponse,body){ 
 			if(err){
 				reject({"Error":err})
 			}
@@ -17,4 +17,4 @@ let sentimentSocial = function(text,API_KEY){
 	})
 }
 
-module.exports = sentimentSocial;
+module.exports = phraseExtractor;

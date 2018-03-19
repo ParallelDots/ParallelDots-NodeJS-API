@@ -6,10 +6,14 @@ const ner = require('./apis/ner.js');
 const emotion = require('./apis/emotion.js');
 const intent = require('./apis/intent.js');
 const keywords = require('./apis/keywords.js');
+const mulitlangKeywords = require('./apis/multilangKeywords.js');
 const taxonomy = require('./apis/taxonomy.js');
-const sentimentSocial = require('./apis/sentimentSocial.js');
 const multilingualSentiment = require('./apis/multilingualSentiment.js');
 const customClassifier = require('./apis/customClassifier.js');
+const textParser = require('./apis/textParser.js');
+const phraseExtractor = require('./apis/phraseExtractor.js');
+const popularity = require('./apis/popularity.js');
+const nsfw = require('./apis/nsfw.js');
 
 let paralleldots = {
 	
@@ -19,8 +23,8 @@ let paralleldots = {
 		return usage(this.apiKey);
 	},
 
-	sentiment: function(text){
-		return sentiment(text,this.apiKey);
+	sentiment: function(text,lang_code='en'){
+		return sentiment(text,lang_code,this.apiKey);
 	},
 
 	abuse: function(text){
@@ -35,8 +39,8 @@ let paralleldots = {
 		return ner(text,this.apiKey)
 	},
 
-	emotion: function(text){
-		return emotion(text,this.apiKey)
+	emotion: function(text,lang_code="en"){
+		return emotion(text,lang_code,this.apiKey)
 	},
 
 	intent: function(text){
@@ -47,20 +51,36 @@ let paralleldots = {
 		return keywords(text,this.apiKey)
 	},
 
-	taxonomy: function(text){
-		return taxonomy(text,this.apiKey)
+	multilangKeywords: function(text,lang_code="en"){
+		return keywords(text,lang_code,this.apiKey)
 	},
 
-	sentimentSocial: function(text){
-		return sentimentSocial(text,this.apiKey)
+	taxonomy: function(text){
+		return taxonomy(text,this.apiKey)
 	},
 
 	multilingualSentiment: function(text,code){
 		return multilingualSentiment(text,code,this.apiKey)
 	},
 
-	customClassifier:function(text,id){
-		return customClassifier(text,id,this.apiKey);
+	customClassifier:function(text,category){
+		return customClassifier(text,category,this.apiKey);
+	},
+
+	textParser:function(text){
+		return textParser(text,this.apiKey);
+	},
+
+	phraseExtractor:function(text){
+		return phraseExtractor(text,this.apiKey);
+	},
+
+	popularity:function(file_path){
+		return popularity(file_path,this.apiKey);
+	},
+
+	nsfw:function(file_path){
+		return nsfw(file_path,this.apiKey);
 	}
 
 }
