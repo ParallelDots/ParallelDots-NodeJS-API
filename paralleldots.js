@@ -14,6 +14,8 @@ const textParser = require('./apis/textParser.js');
 const phraseExtractor = require('./apis/phraseExtractor.js');
 const popularity = require('./apis/popularity.js');
 const nsfw = require('./apis/nsfw.js');
+const facialEmotion = require('./apis/facialEmotion.js');
+const objectRecognizer = require('./apis/objectRecognizer.js');
 
 let paralleldots = {
 	
@@ -81,6 +83,14 @@ let paralleldots = {
 
 	nsfw:function(file_path){
 		return nsfw(file_path,this.apiKey);
+	},
+
+	facialEmotion:function(file_path){
+		return facialEmotion(file_path,this.apiKey);
+	},
+
+	objectRecognizer:function(file_path){
+		return objectRecognizer(file_path,this.apiKey);
 	}
 
 }

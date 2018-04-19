@@ -44,6 +44,8 @@ Supported APIs:
 - [Custom Classifier](https://www.paralleldots.com/custom-classifier)
 - NSFW (Visual API)
 - Popularity (Visual API)
+- Facial Emotion
+- Object Recognizer
 - Phrase Extractor
 - Text Parser
 - Usage
@@ -229,6 +231,22 @@ pd.popularity(file_path)
 	})
 	
 pd.nsfw(file_path)
+	.then((response) => {
+		console.log(response);
+	})
+	.catch((error) => {
+		console.log(error);
+	})
+	
+pd.facialEmotion(file_path)
+	.then((response) => {
+		console.log(response);
+	})
+	.catch((error) => {
+		console.log(error);
+	})
+
+pd.objectRecognizer(file_path)
 	.then((response) => {
 		console.log(response);
 	})

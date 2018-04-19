@@ -181,3 +181,19 @@ pd.nsfw(file_path)
 	.catch((error) => {
 		console.log(error);
 	})
+
+pd.facialEmotion(file_path)
+	.then((response) => {
+		console.log(response);
+	})
+	.catch((error) => {
+		console.log(error);
+	})
+
+pd.objectRecognizer(file_path)
+	.then((response) => {
+		console.log(response);
+	})
+	.catch((error) => {
+		console.log(error);
+	})
