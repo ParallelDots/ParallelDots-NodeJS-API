@@ -54,7 +54,7 @@ let paralleldots = {
 	},
 
 	multilangKeywords: function(text,lang_code="en"){
-		return keywords(text,lang_code,this.apiKey)
+		return mulitlangKeywords(text,lang_code,this.apiKey)
 	},
 
 	taxonomy: function(text){

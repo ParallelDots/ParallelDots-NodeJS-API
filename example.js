@@ -2,7 +2,7 @@ const pd = require('./paralleldots');
 const path = require('path');
 
 // Be sure to set your API key
-pd.apiKey = "YOUR_API_KEY";
+pd.apiKey = "YOUR API KEY";
 
 // Calls to the API return promises
 
@@ -98,14 +98,6 @@ pd.taxonomy('Deutsche Bank CEO sees far fewer than 4,000 Brexit-related moves: p
 		console.log(error);
 	})
 
-pd.taxonomy('Deutsche Bank CEO sees far fewer than 4,000 Brexit-related moves: paper')
-	.then((response) => {
-		console.log(response);
-	})
-	.catch((error) => {
-		console.log(error);
-	})
-
 pd.multilingualSentiment('Barcelona es una ciudad hermosa','es')
 	.then((response) => {
 		console.log(response);
@@ -114,13 +106,6 @@ pd.multilingualSentiment('Barcelona es una ciudad hermosa','es')
 		console.log(err);
 	})
 
-pd.sentimentSocial('I left my camera at home')
-	.then((response) => {
-		console.log(response);
-	})
-	.catch((error) => {
-		console.log(error);
-	})
 
 const category = {
 	"finance": [ 
