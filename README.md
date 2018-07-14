@@ -51,7 +51,7 @@ Supported APIs:
 - Usage
 
 
-Examples - [Full Documentation](https://www.paralleldots.com/docs/)
+Examples - [Full Documentation](https://www.paralleldots.com/docs)
 -------------------------------
 
 ```javascript
@@ -154,28 +154,12 @@ pd.taxonomy('Deutsche Bank CEO sees far fewer than 4,000 Brexit-related moves: p
 		console.log(error);
 	})
 
-pd.taxonomy('Deutsche Bank CEO sees far fewer than 4,000 Brexit-related moves: paper')
-	.then((response) => {
-		console.log(response);
-	})
-	.catch((error) => {
-		console.log(error);
-	})
-
 pd.multilingualSentiment('Barcelona es una ciudad hermosa','es')
 	.then((response) => {
 		console.log(response);
 	})
 	.catch((err) =>{
 		console.log(err);
-	})
-
-pd.sentimentSocial('I left my camera at home')
-	.then((response) => {
-		console.log(response);
-	})
-	.catch((error) => {
-		console.log(error);
 	})
 
 const category = {
