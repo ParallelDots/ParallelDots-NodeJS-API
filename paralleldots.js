@@ -1,17 +1,27 @@
 const usage = require('./apis/usage.js');
 const sentiment = require('./apis/sentiment.js');
+const sentimentBatch = require('./apis/sentimentBatch.js');
 const abuse = require('./apis/abuse.js');
+const abuseBatch = require('./apis/abuseBatch.js');
 const semantic = require('./apis/semantic.js');
 const ner = require('./apis/ner.js');
+const nerBatch = require('./apis/nerBatch.js');
 const emotion = require('./apis/emotion.js');
+const emotionBatch = require('./apis/emotionBatch.js');
 const intent = require('./apis/intent.js');
+const intentBatch = require('./apis/intentBatch.js');
 const keywords = require('./apis/keywords.js');
+const keywordsBatch = require('./apis/keywordsBatch.js');
 const mulitlangKeywords = require('./apis/multilangKeywords.js');
 const taxonomy = require('./apis/taxonomy.js');
+const taxonomyBatch = require('./apis/taxonomyBatch.js');
 const multilingualSentiment = require('./apis/multilingualSentiment.js');
 const customClassifier = require('./apis/customClassifier.js');
 const textParser = require('./apis/textParser.js');
 const phraseExtractor = require('./apis/phraseExtractor.js');
+const phraseExtractorBatch = require('./apis/phraseExtractorBatch.js');
+const languageDetection = require('./apis/languageDetection.js');
+const languageDetectionBatch = require('./apis/languageDetectionBatch.js');
 const popularity = require('./apis/popularity.js');
 const nsfw = require('./apis/nsfw.js');
 const facialEmotion = require('./apis/facialEmotion.js');
@@ -28,9 +38,17 @@ let paralleldots = {
 	sentiment: function(text,lang_code='en'){
 		return sentiment(text,lang_code,this.apiKey);
 	},
+	
+	sentimentBatch: function(text,lang_code='en'){
+		return sentimentBatch(text,lang_code,this.apiKey);
+	},
 
 	abuse: function(text){
 		return abuse(text,this.apiKey);
+	},
+
+	abuseBatch: function(text){
+		return abuseBatch(text,this.apiKey);
 	},
 
 	semantic: function(text1,text2){
@@ -41,17 +59,33 @@ let paralleldots = {
 		return ner(text,this.apiKey)
 	},
 
+	nerBatch: function(text){
+		return nerBatch(text,this.apiKey)
+	},
+
 	emotion: function(text,lang_code="en"){
 		return emotion(text,lang_code,this.apiKey)
+	},
+
+	emotionBatch: function(text,lang_code="en"){
+		return emotionBatch(text,lang_code,this.apiKey)
 	},
 
 	intent: function(text){
 		return intent(text,this.apiKey)
 	},
+	
+	intentBatch: function(text){
+		return intentBatch(text,this.apiKey)
+	},
 
 	keywords: function(text){
 		return keywords(text,this.apiKey)
 	},
+	keywordsBatch: function(text){
+		return keywordsBatch(text,this.apiKey)
+	},
+
 
 	multilangKeywords: function(text,lang_code="en"){
 		return mulitlangKeywords(text,lang_code,this.apiKey)
@@ -60,6 +94,11 @@ let paralleldots = {
 	taxonomy: function(text){
 		return taxonomy(text,this.apiKey)
 	},
+
+	taxonomyBatch: function(text){
+		return taxonomyBatch(text,this.apiKey)
+	},
+
 
 	multilingualSentiment: function(text,code){
 		return multilingualSentiment(text,code,this.apiKey)
@@ -77,20 +116,32 @@ let paralleldots = {
 		return phraseExtractor(text,this.apiKey);
 	},
 
-	popularity:function(file_path){
-		return popularity(file_path,this.apiKey);
+	phraseExtractorBatch:function(text){
+		return phraseExtractorBatch(text,this.apiKey);
 	},
 
-	nsfw:function(file_path){
-		return nsfw(file_path,this.apiKey);
+	languageDetection:function(text){
+		return languageDetection(text,this.apiKey);
 	},
 
-	facialEmotion:function(file_path){
-		return facialEmotion(file_path,this.apiKey);
+	languageDetectionBatch:function(text){
+		return languageDetectionBatch(text,this.apiKey);
 	},
 
-	objectRecognizer:function(file_path){
-		return objectRecognizer(file_path,this.apiKey);
+	popularity:function(file_path,type){
+		return popularity(file_path,type,this.apiKey);
+	},
+
+	nsfw:function(file_path,type){
+		return nsfw(file_path,type,this.apiKey);
+	},
+
+	facialEmotion:function(file_path,type){
+		return facialEmotion(file_path,type,this.apiKey);
+	},
+
+	objectRecognizer:function(file_path,type){
+		return objectRecognizer(file_path,type,this.apiKey);
 	}
 
 }
