@@ -80,6 +80,15 @@ pd.sentiment('Team performed well overall.','en')
 		console.log(error);
 	})
 
+
+var text_array=JSON.stringify(["Come on,lets play together","Team performed well overall."]);
+pd.sentimentBatch(text_array,'en')
+ .then((response) => {
+		console.log(response);
+	}).catch((error) =>{
+		console.log(error);
+  })
+
 pd.abuse("I was not very impressed with the band's performance this year")
 	.then((response) => {
 		console.log(response);
@@ -87,6 +96,18 @@ pd.abuse("I was not very impressed with the band's performance this year")
 	.catch((error) => {
 		console.log(error);
 	})
+
+
+var text_array=JSON.stringify(["you f**king a$$hole.","fuck this shit."]);
+pd.abuseBatch(text_array)
+ .then((response) => {
+		console.log(response);
+	}).catch((error) =>{
+		console.log(error);
+  })console.log(error);
+	})
+
+
 
 pd.semantic('Global warming set to exceed Paris agreement’s 1.5C limit by 2040s, according to draft UN report','There is a tipping point’: UN warns climate change goals laid out in Paris accord are almost out of reach')
 	.then((response) => {
@@ -106,6 +127,16 @@ pd.ner('When Michael Jordan was at the peak of his powers as an NBA superstar, h
 	})
 
 
+var text_array=JSON.stringify(["Apple was founded by Steve Jobs.","Apple Inc. is an American multinational technology company headquartered in Cupertino, California"]);
+pd.nerBatch(text_array)
+ .then((response) => {
+		console.log(response);
+	}).catch((error) =>{
+		console.log(error);
+  })
+
+
+
 pd.emotion("I am trying to imagine you with a personality.","en")
 	.then((response) => {
 		console.log(response);
@@ -122,6 +153,16 @@ pd.emotion("C'est un environnement très hostile, si vous choisissez de débattr
 		console.log(error);
 	})
 
+
+var text_array=JSON.stringify(["I am trying to imagine you with a personality.","This is shit."]);
+pd.emotionBatch(text_array,'en')
+ .then((response) => {
+		console.log(response);
+	}).catch((error) =>{
+		console.log(error);
+  })
+
+
 pd.intent('How do I cancel my ticket from the app?')
 	.then((response) => {
 		console.log(response);
@@ -130,6 +171,17 @@ pd.intent('How do I cancel my ticket from the app?')
 		console.log(error);
 	})
 
+
+var text_array=JSON.stringify(["How do I cancel my ticket from the app?","20% off on your next Uber ride?"]);
+pd.intentBatch(text_array)
+ .then((response) => {
+		console.log(response);
+	}).catch((error) =>{
+		console.log(error);
+  })
+
+
+
 pd.keywords('For the Yankees, it took a stunning comeback after being down 2-0 to the Indians in the American League Division Series. For the Astros, it took beating Chris Sale to top the Red Sox.')
 	.then((response) => {
 		console.log(response);
@@ -137,6 +189,15 @@ pd.keywords('For the Yankees, it took a stunning comeback after being down 2-0 t
 	.catch((error) => {
 		console.log(error);
 	})
+
+
+var text_array=JSON.stringify(["For the Yankees, it took a stunning comeback after being down 2-0 to the Indians in the American League Division Series. For the Astros, it took beating Chris Sale to top the Red Sox.","U.S. stocks edged higher on Friday, with the S&P 500 hitting a more than five-month high, as gains in industrials and other areas offset a drop in financials. Fred Katayama reports."]);
+pd.keywordsBatch(text_array)
+ .then((response) => {
+		console.log(response);
+	}).catch((error) =>{
+		console.log(error);
+		
 
 pd.multilangKeywords("C'est un environnement très hostile, si vous choisissez de débattre ici, vous serez vicieusement attaqué par l'opposition.","fr")
 	.then((response) => {
@@ -154,13 +215,16 @@ pd.taxonomy('Deutsche Bank CEO sees far fewer than 4,000 Brexit-related moves: p
 		console.log(error);
 	})
 
-pd.taxonomy('Deutsche Bank CEO sees far fewer than 4,000 Brexit-related moves: paper')
-	.then((response) => {
+
+var text_array=JSON.stringify(["For the Yankees, it took a stunning comeback after being down 2-0 to the Indians in the American League Division Series. For the Astros, it took beating Chris Sale to top the Red Sox.","U.S. stocks edged higher on Friday, with the S&P 500 hitting a more than five-month high, as gains in industrials and other areas offset a drop in financials. Fred Katayama reports."]);
+pd.taxonomyBatch(text_array)
+ .then((response) => {
 		console.log(response);
-	})
-	.catch((error) => {
+	}).catch((error) =>{
 		console.log(error);
-	})
+  })
+
+
 
 pd.multilingualSentiment('Barcelona es una ciudad hermosa','es')
 	.then((response) => {
@@ -204,6 +268,8 @@ pd.customClassifier('Prime Minister Narendra Modi tweeted a link to the speech H
 		console.log(error);
 	})
 
+
+
 pd.textParser('For the Yankees, it took a stunning comeback after being down 2-0 to the Indians in the American League Division Series. For the Astros, it took beating Chris Sale to top the Red Sox.')
 	.then((response) => {
 		console.log(response);
@@ -211,6 +277,8 @@ pd.textParser('For the Yankees, it took a stunning comeback after being down 2-0
 	.catch((error) => {
 		console.log(error);
 	})
+
+
 
 pd.phraseExtractor('For the Yankees, it took a stunning comeback after being down 2-0 to the Indians in the American League Division Series. For the Astros, it took beating Chris Sale to top the Red Sox.')
 	.then((response) => {
@@ -220,9 +288,48 @@ pd.phraseExtractor('For the Yankees, it took a stunning comeback after being dow
 		console.log(error);
 	})
 
+
+var text_array=JSON.stringify(["For the Yankees, it took a stunning comeback after being down 2-0 to the Indians in the American League Division Series. For the Astros, it took beating Chris Sale to top the Red Sox.","U.S. stocks edged higher on Friday, with the S&P 500 hitting a more than five-month high, as gains in industrials and other areas offset a drop in financials. Fred Katayama reports."]);
+pd.phraseExtractorBatch(text_array)
+ .then((response) => {
+		console.log(response);
+	}).catch((error) =>{
+		console.log(error);
+  })console.log(error);
+	})	
+
+
+
+
+pd.languageDetection('C est un environnement très hostile, si vous choisissez de débattre ici, vous serez vicieusement attaqué par l opposition.')  
+  .then((response) => {
+	console.log(response);
+	}).catch((error) =>{
+		console.log(error);
+  })
+  
+
+var text_array=JSON.stringify(["C est un environnement très hostile, si vous choisissez de débattre ici, vous serez vicieusement attaqué par l opposition.","El hardware inalámbrico no autorizado se puede introducir fácilmente. Lospuntos de acceso inalámbricos son relativamente poco costosos y se implementan fácilmente"]);
+pd.languageDetectionBatch(text_array)
+ .then((response) => {
+		console.log(response);
+	}).catch((error) =>{
+		console.log(error);
+  })console.log(error);
+  })
+  
+
+
+
+
 const file_path = path.join(__dirname,'doggie.jpg');
+const file_url='http://i.imgur.com/klb812s.jpg';
 
-pd.popularity(file_path)
+pd.popularity(file_path,type='local')  
+
+// OR  
+
+pd.popularity(file_url,type='url') 
 	.then((response) => {
 		console.log(response);
 	})
@@ -230,7 +337,11 @@ pd.popularity(file_path)
 		console.log(error);
 	})
 	
-pd.nsfw(file_path)
+pd.nsfw(file_path,type='local')   
+
+// OR  
+
+pd.nsfw(file_url,type='url')
 	.then((response) => {
 		console.log(response);
 	})
@@ -238,7 +349,11 @@ pd.nsfw(file_path)
 		console.log(error);
 	})
 	
-pd.facialEmotion(file_path)
+pd.facialEmotion(file_path,type='local')  
+
+// OR  
+
+pd.facialEmotion(file_url,type='url')
 	.then((response) => {
 		console.log(response);
 	})
@@ -246,7 +361,11 @@ pd.facialEmotion(file_path)
 		console.log(error);
 	})
 
-pd.objectRecognizer(file_path)
+pd.objectRecognizer(file_path,type='local')   
+
+// OR   
+
+pd.objectRecognizer(file_url,type='url')
 	.then((response) => {
 		console.log(response);
 	})
@@ -269,6 +388,6 @@ intent('How do I cancel my ticket from the app?','<YOUR_API_KEY>')
 		console.log(error);
 	})
 ```
- Available APIs: abuse | customClassifier | emotion | intent | keywords | multilangKeywords | ner | nsfw | phraseExtractor | popularity | semantic | sentiment | taxonomy | textParser | usage
+ Available APIs: abuse | abuseBatch | customClassifier | emotion | emotionBatch | intent | intentBatch | keywords | keywordsBatch | multilangKeywords | ner | nerBatch | nsfw | phraseExtractor | phraseExtractorBatch | popularity | semantic | sentiment | sentimentBatch | taxonomy | taxonomyBatch | textParser | languageDetection | languageDetectionBatch | usage
 
 Note : You must pass your API key as the last parameter for single usage.
