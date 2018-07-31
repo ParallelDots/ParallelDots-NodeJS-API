@@ -51,7 +51,7 @@ Supported APIs:
 - Usage
 
 
-Examples - [Full Documentation](https://www.paralleldots.com/docs/)
+Examples - [Full Documentation](https://www.paralleldots.com/docs)
 -------------------------------
 
 ```javascript
