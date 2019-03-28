@@ -8,7 +8,7 @@
 				if(type=='local'){
 				var options = { 
 					method: 'POST',
-					url: 'http://apis.paralleldots.com/v3/popularity',
+					url: 'http://apis.paralleldots.com/v4/popularity',
 					headers: 
 					{
 						'cache-control': 'no-cache',

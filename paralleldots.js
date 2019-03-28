@@ -1,6 +1,10 @@
 const usage = require('./apis/usage.js');
 const sentiment = require('./apis/sentiment.js');
 const sentimentBatch = require('./apis/sentimentBatch.js');
+const target_sentiment = require('./apis/target_sentiment.js');
+const target_sentimentBatch = require('./apis/target_sentimentBatch.js');
+const sarcasm = require('./apis/sarcasm.js');
+const sarcasmBatch = require('./apis/sarcasmBatch.js');
 const abuse = require('./apis/abuse.js');
 const abuseBatch = require('./apis/abuseBatch.js');
 const semantic = require('./apis/semantic.js');
@@ -43,6 +47,18 @@ let paralleldots = {
 		return sentimentBatch(text,lang_code,this.apiKey);
 	},
 
+	target_sentiment: function(text,lang_code='en',entity){
+		return target_sentiment(text,lang_code,this.apiKey,entity);
+	},
+	target_sentimentBatch: function(text,lang_code='en',entity){
+		return target_sentimentBatch(text,lang_code,this.apiKey,entity);
+	},
+	sarcasm: function(text){
+		return sarcasm(text,this.apiKey);
+	},
+	sarcasmBatch: function(text){
+		return sarcasmBatch(text,this.apiKey);
+	},
 	abuse: function(text){
 		return abuse(text,this.apiKey);
 	},

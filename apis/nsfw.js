@@ -8,7 +8,7 @@ let nsfw = function(image_path,type,API_KEY){
 			if(type=='local'){
 			var options = { 
 				method: 'POST',
-				url: 'http://apis.paralleldots.com/v3/nsfw',
+				url: 'http://apis.paralleldots.com/v4/nsfw',
 				headers: 
 				{
 					'cache-control': 'no-cache',

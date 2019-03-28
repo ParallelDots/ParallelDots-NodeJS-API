@@ -9,7 +9,7 @@ let phraseExtractorBatch = function(text_list,API_KEY){
 		if(!text || typeof(text) != "string"){
 			reject({error: 'Please provide a non-empty string'});
         }
-		request.post({url:'http://apis.paralleldots.com/v3/phrase_extractor_batch', form: {text:JSON.parse(text),api_key:API_KEY}}, function(err,httpResponse,body){ 
+		request.post({url:'http://apis.paralleldots.com/v4/phrase_extractor_batch', form: {text:JSON.parse(text),api_key:API_KEY}}, function(err,httpResponse,body){ 
 			if(err){
 				reject({"Error":err});
 			}

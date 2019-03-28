@@ -1,6 +1,6 @@
 const request = require('request');
 
-let languageDetectionBatch = function(text_list,API_KEY){
+let sarcasmBatch = function(text_list,API_KEY){
 	return new Promise((resolve,reject) => {
 		if(!API_KEY){
 			reject({error: 'API key is not set'});
@@ -9,7 +9,7 @@ let languageDetectionBatch = function(text_list,API_KEY){
 		if(!text || typeof(text) != "string"){
 			reject({error: 'Please provide a non-empty string'});
         }
-		request.post({url:'http://apis.paralleldots.com/v4/language_detection_batch', form: {text:JSON.parse(text),api_key:API_KEY}}, function(err,httpResponse,body){ 
+		request.post({url:'https://dev.apis.paralleldots.com/v4/sarcasm_batch', form: {text:JSON.parse(text),api_key:API_KEY}}, function(err,httpResponse,body){ 
 			if(err){
 				reject({"Error":err});
 			}
@@ -18,4 +18,4 @@ let languageDetectionBatch = function(text_list,API_KEY){
 	})
 }
 
-module.exports = languageDetectionBatch;
+module.exports = sarcasmBatch;

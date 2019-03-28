@@ -17,7 +17,7 @@ let customClassifier = function(text,category,API_KEY){
 			reject({error: 'Please provide categories object as the 2nd argument.'})
 		}
 		category = JSON.stringify(category);
-		request.post({url:'http://apis.paralleldots.com/v3/custom_classifier', form: {text:text,category:category,api_key:API_KEY}}, function(err,httpResponse,body){ 
+		request.post({url:'http://apis.paralleldots.com/v4/custom_classifier', form: {text:text,category:category,api_key:API_KEY}}, function(err,httpResponse,body){ 
 			if(err){
 				reject({"Error":err})
 			}

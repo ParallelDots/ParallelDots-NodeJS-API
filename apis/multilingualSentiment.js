@@ -13,7 +13,7 @@ let multilingualSentiment = function(text,lang_code,API_KEY){
 				error: 'Please provide a valid language code. Valid language codes are "es" for Spanish, "pt" for Portuguese and "cn" for Chinese.'
 			})
 		}
-		request.post({url:'http://apis.paralleldots.com/v2/multilang', form: {text:text,lang_code:lang_code,api_key:API_KEY}}, function(err,httpResponse,body){ 
+		request.post({url:'http://apis.paralleldots.com/v4/multilang', form: {text:text,lang_code:lang_code,api_key:API_KEY}}, function(err,httpResponse,body){ 
 			if(err){
 				reject({"Error":err})
 			}

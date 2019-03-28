@@ -135,7 +135,20 @@ pd.nerBatch(text_array)
 		console.log(error);
   })
 
+pd.sarcasm('I am trying to imagine you with a personality.')
+	.then((response) => {
+		console.log(response);
+	}).catch((error) =>{
+		console.log(error);
+    })
 
+var text_array=JSON.stringify(["Come on,lets play together","Team performed well overall."]);
+pd.sarcasmBatch(text_array)
+	.then((response) => {
+		console.log(response);
+	}).catch((error) =>{
+		console.log(error);
+    })
 
 pd.emotion("I am trying to imagine you with a personality.","en")
 	.then((response) => {
