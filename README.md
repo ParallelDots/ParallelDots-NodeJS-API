@@ -89,6 +89,23 @@ pd.sentimentBatch(text_array,'en')
 		console.log(error);
   })
 
+pd.sarcasm('Team performed well overall.','en')
+	.then((response) => {
+		console.log(response);
+	}).catch((error) =>{
+		console.log(error);
+	})
+
+
+var text_array=JSON.stringify(["Come on,lets play together","Team performed well overall."]);
+pd.sarcasmBatch(text_array,'en')
+ .then((response) => {
+		console.log(response);
+	}).catch((error) =>{
+		console.log(error);
+  })
+
+
 pd.abuse("I was not very impressed with the band's performance this year")
 	.then((response) => {
 		console.log(response);
@@ -118,7 +135,7 @@ pd.semantic('Global warming set to exceed Paris agreement’s 1.5C limit by 2040
 	})
 
 
-pd.ner('When Michael Jordan was at the peak of his powers as an NBA superstar, his Chicago Bulls teams were mowing down the competition, winning six National Basketball Association titles and setting a record for wins in a season that was broken by the Golden State Warriors two seasons ago.')
+pd.ner('When Michael Jordan was at the peak of his powers as an NBA superstar, his Chicago Bulls teams were mowing down the competition, winning six National Basketball Association titles and setting a record for wins in a season that was broken by the Golden State Warriors two seasons ago.','en')
 	.then((response) => {
 		console.log(response);
 	})
@@ -128,14 +145,14 @@ pd.ner('When Michael Jordan was at the peak of his powers as an NBA superstar, h
 
 
 var text_array=JSON.stringify(["Apple was founded by Steve Jobs.","Apple Inc. is an American multinational technology company headquartered in Cupertino, California"]);
-pd.nerBatch(text_array)
+pd.nerBatch(text_array,'en')
  .then((response) => {
 		console.log(response);
 	}).catch((error) =>{
 		console.log(error);
   })
 
-pd.sarcasm('I am trying to imagine you with a personality.')
+pd.sarcasm('I am trying to imagine you with a personality.','en')
 	.then((response) => {
 		console.log(response);
 	}).catch((error) =>{
@@ -143,7 +160,7 @@ pd.sarcasm('I am trying to imagine you with a personality.')
     })
 
 var text_array=JSON.stringify(["Come on,lets play together","Team performed well overall."]);
-pd.sarcasmBatch(text_array)
+pd.sarcasmBatch(text_array,"en")
 	.then((response) => {
 		console.log(response);
 	}).catch((error) =>{
@@ -401,6 +418,6 @@ intent('How do I cancel my ticket from the app?','<YOUR_API_KEY>')
 		console.log(error);
 	})
 ```
- Available APIs: abuse | abuseBatch | customClassifier | emotion | emotionBatch | intent | intentBatch | keywords | keywordsBatch | multilangKeywords | ner | nerBatch | nsfw | phraseExtractor | phraseExtractorBatch | popularity | semantic | sentiment | sentimentBatch | taxonomy | taxonomyBatch | textParser | languageDetection | languageDetectionBatch | usage
+ Available APIs: abuse | abuseBatch | customClassifier | emotion | emotionBatch | intent | intentBatch | keywords | keywordsBatch | multilangKeywords | ner | nerBatch | phraseExtractor | phraseExtractorBatch | semantic | sentiment | sentimentBatch | taxonomy | taxonomyBatch | usage  | sarcasm | sarcasmBatch |
 
 Note : You must pass your API key as the last parameter for single usage.
