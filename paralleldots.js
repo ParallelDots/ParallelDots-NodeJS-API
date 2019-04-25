@@ -47,17 +47,17 @@ let paralleldots = {
 		return sentimentBatch(text,lang_code,this.apiKey);
 	},
 
-	target_sentiment: function(text,lang_code='en',entity){
-		return target_sentiment(text,lang_code,this.apiKey,entity);
+	target_sentiment: function(text,entity){
+		return target_sentiment(text,this.apiKey,entity);
 	},
-	target_sentimentBatch: function(text,lang_code='en',entity){
-		return target_sentimentBatch(text,lang_code,this.apiKey,entity);
+	target_sentimentBatch: function(text,entity){
+		return target_sentimentBatch(text,this.apiKey,entity);
 	},
-	sarcasm: function(text){
-		return sarcasm(text,this.apiKey);
+	sarcasm: function(text,lang_code="en"){
+		return sarcasm(text,lang_code,this.apiKey);
 	},
-	sarcasmBatch: function(text){
-		return sarcasmBatch(text,this.apiKey);
+	sarcasmBatch: function(text,lang_code="en"){
+		return sarcasmBatch(text,lang_code,this.apiKey);
 	},
 	abuse: function(text){
 		return abuse(text,this.apiKey);
@@ -71,12 +71,12 @@ let paralleldots = {
 		return semantic(text1,text2,this.apiKey)
 	},
 
-	ner: function(text){
-		return ner(text,this.apiKey)
+	ner: function(text,lang_code="en"){
+		return ner(text,lang_code,this.apiKey)
 	},
 
-	nerBatch: function(text){
-		return nerBatch(text,this.apiKey)
+	nerBatch: function(text,lang_code="en"){
+		return nerBatch(text,lang_code,this.apiKey)
 	},
 
 	emotion: function(text,lang_code="en"){
