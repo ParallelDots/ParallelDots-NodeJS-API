@@ -8,7 +8,7 @@ let objectRecognizer = function(image_path,type,API_KEY){
 			if(type=='local'){
 			var options = { 
 				method: 'POST',
-				url: 'http://apis.paralleldots.com/v3/object_recognizer',
+				url: 'http://apis.paralleldots.com/v4/object_recognizer',
 				headers: 
 				{
 					'cache-control': 'no-cache',
