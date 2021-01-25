@@ -166,23 +166,7 @@ pd.taxonomyBatch(text_array)
   })
 
 
-const category = {
-	"finance": [ 
-			"markets", 
-			"economy", 
-			"shares" 
-		], 
-	"world politics": [ 
-			"diplomacy", 
-			"UN", 
-			"war" 
-		], 
-	"india": [ 
-			"congress", 
-			"india", 
-			"bjp" 
-		] 
-}
+const category = ["finance", "markets", "economy", "shares","world politics", "diplomacy", "UN", "war", "india","congress", "india", "bjp"]
 
 pd.customClassifier('Prime Minister Narendra Modi tweeted a link to the speech Human Resource Development Minister Smriti Irani made in the Lok Sabha during the debate on the ongoing JNU row and the suicide of Dalit scholar Rohith Vemula at the Hyderabad Central University.',category)
 	.then((response) => {

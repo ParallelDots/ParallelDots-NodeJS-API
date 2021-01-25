@@ -272,23 +272,7 @@ pd.sentimentSocial('I left my camera at home')
 		console.log(error);
 	})
 
-const category = {
-	"finance": [ 
-			"markets", 
-			"economy", 
-			"shares" 
-		], 
-	"world politics": [ 
-			"diplomacy", 
-			"UN", 
-			"war" 
-		], 
-	"india": [ 
-			"congress", 
-			"india", 
-			"bjp" 
-		] 
-}
+const category = ["finance","world politics","india","congress"] 
 
 pd.customClassifier('Prime Minister Narendra Modi tweeted a link to the speech Human Resource Development Minister Smriti Irani made in the Lok Sabha during the debate on the ongoing JNU row and the suicide of Dalit scholar Rohith Vemula at the Hyderabad Central University.',category)
 	.then((response) => {

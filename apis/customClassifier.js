@@ -13,7 +13,7 @@ let customClassifier = function(text,category,API_KEY){
 		if(!text || typeof(text) != "string"){
 			reject({error: 'Please provide a non-empty string'});
 		}
-		if(typeof(category) != "object"){
+		if(!Array.isArray(category)){
 			reject({error: 'Please provide categories object as the 2nd argument.'})
 		}
 		category = JSON.stringify(category);
