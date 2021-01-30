@@ -9,7 +9,7 @@ let target_sentimentBatch = function(text_list,API_KEY,entity){
 		if(!text || typeof(text) != "string"){
 			reject({error: 'Please provide a non-empty string'});
         }
-		request.post({url:'https://apis.paralleldots.com/v4/target/sentiment_batch', form: {text:JSON.parse(text),api_key:API_KEY,entity:entity}}, function(err,httpResponse,body){ 
+		request.post({url:'https://apis.paralleldots.com/v4/target_sentiment_batch', form: {text:JSON.parse(text),api_key:API_KEY,entity:entity}}, function(err,httpResponse,body){ 
 			if(err){
 				reject({"Error":err});
 			}
